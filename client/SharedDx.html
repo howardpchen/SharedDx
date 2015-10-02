@@ -1,0 +1,40 @@
+<head>
+<title>SharedDx</title>
+<link rel="stylesheet" href="/packages/neo_reveal-js/reveal.js/css/theme/moon.css" id="theme"/>
+</head>
+
+<body>
+{{> sampleSlides}}
+</body>
+
+<template name="sampleSlides">
+<div class="reveal">
+    <div class="slides">
+        <section>
+            {{> imageContainer}}
+        </section>
+        <section>
+            <section>Vertical Slide 1</section>
+            <section>Vertical Slide 2</section>
+        </section>
+    </div>
+</div>
+</template>
+
+
+<template name="imageContainer">
+    {{#if Template.subscriptionsReady }}
+        {{> image }}
+    {{else}}
+        Connecting to shared session, please wait...
+    {{/if}}
+</template>
+
+<template name="image">
+    <div id="myImage" style="width:256px; height:256px;"
+         oncontextmenu="return false"
+         unselectable='on'
+         onselectstart='return false;'
+         onmousedown='return false;'>
+    </div>
+</template>
