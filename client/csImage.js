@@ -1,6 +1,6 @@
 /**
- * Created by howard on 9/25/15.
- */
+* Created by howard on 9/25/15.
+*/
 
 Template.image.onRendered(function() {
     //console.log('onRendered');
@@ -47,13 +47,13 @@ Template.image.onRendered(function() {
         blockUpdate = true;
         cornerstone.setViewport(element, viewport.viewport);
         blockUpdate = false;
-    };
+    }
 
     cornerstone.enable(element);
     var imageId = "example://1";
     cornerstone.loadImage(imageId).then(function(image) {
         var viewport = Viewport.findOne();
-        //console.log(viewport);
+        //console.log("Viewport: " + viewport);
 
         cornerstone.displayImage(element, image, viewport.viewport);
         cornerstoneTools.mouseInput.enable(element);

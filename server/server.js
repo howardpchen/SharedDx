@@ -1,6 +1,18 @@
-/**
- * Created by howard on 9/25/15.
- */
+
+
+
 Meteor.startup(function () {
-    // code to run on server at startup
+    // reset the state
+    Viewport.remove({});
+    Viewport.insert({});
+
+    Meteor.publish("ViewportSession", function () {
+        return Viewport.find();
+    });
+
+    SlideSync.remove({});
+    SlideSync.insert({});
+    Meteor.publish("SlideSession", function () {
+        return SlideSync.find();
+    });
 });
